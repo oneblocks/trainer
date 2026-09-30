@@ -1,0 +1,76 @@
+﻿<!doctype html>
+<html lang="zh-CN">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <meta name="theme-color" content="#08111f" />
+  <title>AI 特工学院 · 未来城行动</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=DM+Mono:wght@400;500&family=Manrope:wght@400;500;600;700;800&family=Noto+Sans+SC:wght@400;500;600;700;800;900&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="style.css" />
+  <link rel="stylesheet" href="visuals.css" />
+</head>
+<body>
+  <div class="sky-grid"></div><div class="orb orb-a"></div><div class="orb orb-b"></div>
+  <header class="topbar">
+    <a class="brand" href="#home" aria-label="返回主页"><span class="brand-mark">A<span>✳</span></span><span>特工学院<small>FUTURE CITY · 2035</small></span></a>
+    <div class="top-center"><span class="live-dot"></span><span>未来城中枢</span><span class="top-divider">/</span><span class="mono" id="clock">20:35:08</span></div>
+    <button class="profile" id="profileBtn" type="button" aria-label="编辑特工角色"><span class="profile-avatar" id="profileAvatar" aria-hidden="true">🧑‍🚀</span><span><b id="agentName">新晋特工</b><small id="agentLevel">LV.01 · 数据学徒</small></span><span class="profile-menu">⌄</span></button>
+  </header>
+
+  <dialog class="agent-dialog" id="agentDialog" aria-labelledby="agentDialogTitle">
+    <div class="agent-dialog-head"><div><span class="mono">AGENT IDENTITY</span><h2 id="agentDialogTitle">定制你的特工角色</h2></div><button class="agent-close" id="agentClose" type="button" aria-label="关闭">×</button></div>
+    <div class="agent-preview"><span class="profile-avatar agent-preview-avatar" id="agentPreviewAvatar" aria-hidden="true">🧑‍🚀</span><div><b id="agentPreviewName">新晋特工</b><small id="agentPreviewRank">LV.01 · 数据学徒</small><small id="agentNextRank">完成第 1 关解锁数据训练师</small></div></div>
+    <label class="agent-label" for="agentNameInput">特工代号</label><input class="agent-name-input" id="agentNameInput" maxlength="12" autocomplete="nickname" placeholder="输入你的特工代号">
+    <div class="agent-label">选择头像</div><div class="agent-avatar-options" id="agentAvatarOptions" role="group" aria-label="预设头像"></div>
+    <label class="agent-upload" for="agentAvatarFile">上传自己的图片 <span>↗</span></label><input id="agentAvatarFile" type="file" accept="image/png,image/jpeg,image/webp,image/gif" hidden><p class="agent-upload-hint">图片会缩小后保存在此浏览器中，仅供你自己使用。</p>
+    <div class="agent-dialog-actions"><button class="btn-ghost" id="agentCancel" type="button">取消</button><button class="btn-primary" id="agentSave" type="button">保存角色 <span class="btn-arrow">↗</span></button></div>
+  </dialog>
+
+  <main id="app">
+    <section class="screen active" id="home">
+      <div class="hero-layout">
+        <div class="hero-copy">
+          <div class="eyebrow"><span class="eyebrow-icon">✦</span> 特工学院 · 特别行动计划 <span class="eyebrow-line"></span></div>
+          <h1>未来城市，<br><span>等你来修复。</span></h1>
+          <p class="hero-text">AI 中枢出现异常。摄像头认错目标，机器人送错东西，城市正在失去控制。你的任务不是关掉 AI，而是——<strong>学会训练它，修复它。</strong></p>
+          <div class="hero-buttons"><button class="btn-primary" id="startBtn"><span>进入行动</span><span class="btn-arrow">↗</span></button><button class="btn-ghost" id="continueBtn"><span class="play-small">▶</span> <span id="continueLabel">查看学院地图</span></button></div>
+          <div class="hero-foot"><div class="hero-avatars"><span>🤖</span><span>🛰️</span><span>🧠</span></div><span>和小 A 一起，完成你的第一次 AI 行动</span><span class="foot-divider">·</span><span class="mono">完整体验约 60—90 分钟</span></div>
+        </div>
+        <div class="hero-visual">
+          <div class="visual-tag tag-top"><span class="pulse-mini"></span> SYSTEM ALERT <b>03</b></div>
+          <div class="city-scene"><div class="city-sun"></div><div class="city-haze"></div>
+            <div class="tower tower-1"><i></i><i></i><i></i><i></i><i></i></div><div class="tower tower-2"><i></i><i></i><i></i><i></i></div><div class="tower tower-3"><i></i><i></i><i></i><i></i><i></i><i></i></div><div class="tower tower-4"><i></i><i></i><i></i></div><div class="tower tower-5"><i></i><i></i><i></i><i></i></div>
+            <div class="skyway"></div><div class="drone drone-one">◈</div><div class="drone drone-two">◈</div><div class="scan-line"></div>
+            <div class="robot"><div class="robot-aura"></div><div class="robot-head"><span class="antenna"></span><span class="eye eye-l"></span><span class="eye eye-r"></span><span class="robot-mouth"></span><span class="ear ear-l"></span><span class="ear ear-r"></span></div><div class="robot-body"><span class="robot-core">A</span><span class="robot-arm arm-l"></span><span class="robot-arm arm-r"></span></div><div class="robot-shadow"></div></div>
+            <div class="city-label"><span>NEO CITY</span><span class="mono">35°41'22"N</span></div>
+          </div>
+          <div class="visual-tag tag-bottom"><span class="tag-icon">⌁</span><span>AI CORE</span><strong>OFFLINE</strong><span class="tag-red-dot"></span></div>
+          <div class="visual-coordinate mono">NC / 2035</div>
+        </div>
+      </div>
+      <div class="home-bottom"><div class="bottom-label">行动简报 <span class="bottom-line"></span></div><div class="brief-cards"><div class="brief-card"><span class="brief-icon violet">⌘</span><span><small>你的伙伴</small><b>AI 助手 · 小 A</b></span><span class="brief-arr">↗</span></div><div class="brief-card"><span class="brief-icon mint">⌁</span><span><small>行动章节</small><b>完整计划共 8 章</b></span><span class="brief-arr">↗</span></div><div class="brief-card"><span class="brief-icon amber">◷</span><span><small>完整体验约</small><b>60—90 分钟</b></span><span class="brief-arr">↗</span></div><div class="brief-status"><span class="status-ring">!</span><span><small>城市状态</small><b>中枢异常</b></span><span class="status-bar"><i></i></span><span class="mono status-pct">23%</span></div></div></div>
+    </section>
+
+    <section class="screen" id="mapScreen"><div class="section-head"><div><div class="eyebrow"><span class="eyebrow-icon">✦</span> MISSION CONTROL</div><h2>学院行动地图<span class="title-dot">.</span></h2><p>完成当前关卡即可解锁下一关，按顺序完成全部 8 项行动，修复未来城。</p></div><div class="map-progress"><div class="progress-label"><span>城市修复进度</span><b id="progressText">0 / 8</b></div><div class="progress-track"><i id="progressBar"></i></div><div class="progress-sub">累计行动经验 <b id="xpCount">0 XP</b></div></div></div><div class="map-layout"><div class="mission-list" id="missionList"></div><aside class="companion-card"><div class="companion-top"><span class="companion-status"><i></i> ONLINE</span><span class="companion-more">···</span></div><div class="companion-art"><div class="companion-glow"></div><div class="tiny-bot"><div class="tiny-head"><i></i><i></i></div><div class="tiny-body">A</div></div><span class="bot-spark spark-1">✦</span><span class="bot-spark spark-2">✧</span></div><div class="companion-intro"><span class="mono">YOUR AI PARTNER</span><h3>小 A</h3><p id="companionQuote">我还什么都不会。<br>你愿意训练我吗？</p></div><div class="companion-stats"><span>信任度 <b id="trustValue">0</b></span><div class="trust-track"><i id="trustBar"></i></div><span class="mono">LV.<b id="botLevel">01</b></span></div><button class="btn-secondary" id="firstMissionBtn">开始第一项行动 <span>↗</span></button></aside></div></section>
+
+    <section class="screen" id="missionScreen"><div class="mission-topline"><button class="back-btn" id="backMap">← <span>行动地图</span></button><div class="mission-breadcrumb"><span>行动</span><b>/</b><span id="missionCrumb">01 数据训练营</span></div><div class="mission-step"><span id="stepLabel">01 / 04</span><span class="step-dots" id="stepDots"></span></div></div><div class="mission-shell"><div class="mission-main"><div class="mission-heading"><div class="mission-kicker"><span class="mission-index" id="missionIndex">01</span><span class="eyebrow" id="missionCategory">DATA TRAINING</span></div><h2 id="missionTitle">教小 A 认识天空中的物体</h2><p id="missionDesc"></p></div><div class="play-area" id="playArea"></div><div class="mission-feedback" id="feedback" aria-live="polite"></div><div class="mission-controls"><span class="hint"><span>✦</span> <span id="hintText">试着从更多样的例子开始训练</span></span><button class="btn-primary compact" id="actionBtn">开始训练 <span class="btn-arrow">↗</span></button></div></div><aside class="mission-aside"><div class="aside-label"><span class="live-dot"></span> FIELD NOTES</div><div class="little-bot-row"><div class="mini-bot">🤖</div><div><b>小 A</b><small>正在和你一起行动</small></div></div><div class="aside-chat" id="asideChat">“我会认真记住你教我的东西！”</div><div class="aside-divider"></div><div class="concept-title">本关线索 <span>✦</span></div><div class="concept-copy" id="conceptCopy">你选的每个样本，都会成为 AI 学习世界的线索。</div><div class="aside-tip"><span>⌁</span><div><b>特工提示</b><p>先大胆尝试。行动中发现的问题，就是最好的线索。</p></div></div><div class="mini-city"><span class="mini-city-label">CITY RESTORE</span><div class="mini-city-track"><i id="miniCityBar"></i></div><span class="mono" id="miniCityPct">23%</span></div></aside></div></section>
+
+    <section class="screen" id="resultScreen"><div class="result-wrap"><div class="result-confetti" id="confetti"></div><div class="result-emblem">✦</div><div class="eyebrow"><span class="eyebrow-icon">✦</span> MISSION COMPLETE</div><h2 id="resultTitle">第一步，训练完成。</h2><p id="resultCopy">小 A 学会了新本领，未来城正在恢复。</p><div class="result-stats"><div><small>本次获得</small><b id="resultXP">+120 XP</b></div><div><small>行动经验</small><b id="resultSkill">样本筛选</b></div><div><small>城市修复</small><b id="resultCity">+9%</b></div></div><div class="result-badge" id="resultBadge"><span>◈</span><div><small>新获得徽章</small><b>数据训练师</b></div><span class="badge-shine">✧</span></div><button class="btn-primary result-next" id="nextBtn">继续行动 <span class="btn-arrow">↗</span></button><button class="btn-ghost result-map" id="resultMapBtn">返回学院地图</button></div></section>
+    <section class="screen" id="certificateScreen">
+      <div class="certificate-series-head"><div><span class="mono">CERTIFICATE SERIES</span><b id="certSeriesTitle">行动证书系列 · 01 / 09</b></div><div class="series-progress"><i id="certSeriesBar"></i></div></div>
+      <div class="certificate" id="certificateCard"><div class="cert-stamp" id="certStamp">AI<br>CADET</div><div class="cert-top"><span class="brand-mark">A<span>✳</span></span><span class="mono">FUTURE CITY · 2035</span></div><div class="cert-line"></div><div class="eyebrow" id="certEyebrow">MISSION 01 · CERTIFICATE</div><h2 id="certHeading">数据训练<br><span>行动证书</span></h2><p>兹证明</p><input id="certName" maxlength="12" placeholder="输入你的特工代号" aria-label="特工代号"><p id="certCopy">已成功完成「数据训练营」行动，<br>掌握 AI 数据训练的基础能力。</p><div class="cert-rank" id="certRank">✦ 数据训练师 · LV.01 ✦</div><div class="cert-bottom"><span class="mono" id="certDate"></span><span>特工学院 · 院长签发</span></div><div class="cert-number mono" id="certNumber">FC-2035-01</div></div>
+      <div class="certificate-collection" id="certificateCollection" aria-label="证书系列"></div>
+      <div class="certificate-actions"><button class="btn-primary" id="saveCert">打印或另存为 PDF <span class="btn-arrow">↗</span></button><button class="btn-secondary" id="nextCert" hidden>查看高级证书 <span>↗</span></button></div>
+      <button class="btn-ghost" id="certMap">返回学院地图</button>
+    </section>
+  </main>
+  <footer class="footer"><span>© AI 特工学院 · 未来城行动计划</span><span class="footer-right"><i></i> 所有训练均在本地完成 <span class="mono">v2.035</span></span></footer>
+  <div class="toast" id="toast"></div>
+  <script src="app.js"></script>
+  <script src="chapters.js"></script>
+</body>
+</html>
+
+
